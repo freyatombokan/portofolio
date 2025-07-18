@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Freya Emily</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --light: #f0f9ff;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+    .about-content {
+    display: flex;
+    align-items: flex-start; /* Sejajahkan dari atas */
+    gap: 50px;
+        }
+
+        .about-text {
+            
+            flex: 1;
+            padding-top: 0px; /* Penyesuaian halus untuk perataan */
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background-color: var(--light);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary);
+            border: 1px solid #bfdbfe;
+        }
+
+        .about-image {
+            flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+/* Education Section Styling */
+
+.education-section {
+    align-items: flex-start; /* Align to left */
+    max-width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--light);
+    border-radius: var(--radius);
+    border: 1px solid #e2e8f0;
+}
+
+.education-section h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.education-section h4 {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.education-section p {
+    color: var(--gray);
+    margin-bottom: 5px;
+}
+
+.education-section ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.education-section li {
+    margin-bottom: 8px;
+    color: var(--gray);
+    line-height: 1.5;
+    text-align: left; /* Poin-poin rata kiri */
+
+}
+
+.education-section em {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+        /* Work Experience Section */
+        .work-experience {
+            background-color: #f1f5f9;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .work-item {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .work-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .work-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .work-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .work-item:hover .work-img img {
+            transform: scale(1.1);
+        }
+
+        .work-overlay {
+        
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+            color: white;
+        }
+
+        .work-overlay h3 {
+            font-size: 1.4rem;
+            margin-top: 100px;
+            margin-bottom: 5px;
+        }
+
+        .work-overlay h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .work-info {
+            padding: 25px;
+        }
+
+        .work-date {
+            display: inline-block;
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .work-info ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .work-info li {
+            margin-bottom: 10px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: white;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background-color: white;
+            border: 1px solid #cbd5e1;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .portfolio-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .skill-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: white;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            min-width: 40px;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .footer-about h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-about p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Porto<span>folio</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#work-experience">Work Experiences</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Freya Emily T. Tombokan <span> <br> Data Analyst</span></h1>
+                <p>A mathematics fresh graduate with experience in data processing, analysis, visualization, and strong skills in data tools, communication, and teamwork.</p>
+                <a href="https://drive.google.com/file/d/1H4uxoQB_ra1SeRdpI2Yk0xZ2ssWmUM2f/view?usp=sharing" class="btn" target="_blank">View Curriculum Vitae</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+            <div class="hero-image">
+                <img src="hom.jpg" alt="Data Visualization">
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Discover More About Me and My Journey as a Data Analyst</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Data Analysts turn numbers into clear decisions</h3>
+                <p>I am a recent graduate with a Bachelor's degree in Mathematics from Universitas Sam Ratulangi, with a specialization in Computing and Statistics. I have practical experience in data processing, prediction, analysis, and visualization, and I'm proficient in using various data tools to extract meaningful insights.</p>
+                <p>Beyond technical skills, I bring strong communication and collaboration abilities, allowing me to work effectively in teams and contribute to achieving shared goals. I am passionate about data and continuously seeking opportunities to grow and make an impact in the field of data processing and analytics.</p>
+                <div class="skills">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">R</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="skill-item">Looker Studio</span>
+                    <span class="skill-item">Power BI</span>
+                    <span class="skill-item">Excel</span>
+                    <span class="skill-item">Google Sheet</span>
+                    <span class="skill-item">EViews</span>
+                    <span class="skill-item">MATLAB</span>
+                    <span class="skill-item">Minitab</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="portrait.png" alt="Data Analyst Profile">
+            </div>
+        </div>
+        <!-- Education Section Added Below Photo -->
+                <div class="education-section">
+                    <h3>Education</h3>
+                    <h4>Universitas Sam Ratulangi</h4>
+                    <p>Bachelor of Science in Mathematics</p>
+                    <p><em>Aug 2021 - May 2025</em></p>
+                    <ul>
+                        <li>GPA: 3.79 /4.00</li>
+                        <li>Relevant Coursework: Database Systems, Mathematical Statistics, Time Series Analysis, Financial Mathematics, Economic Mathematics, Capital Market Mathematics, Information Technology, Algorithms and Programming</li>
+                        <li>Awardee of Djarum Beasiswa Plus 2023/2024</li>
+                        <li>Fourth Outstanding Student of Faculty of Mathematics and Natural Sciences, Sam Ratulangi University</li>
+                    </ul>
+                </div>
+    </div>
+</section>
+
+    <!-- Work Experience Section -->
+    <section class="work-experience" id="work-experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Work Experiences</h2>
+                <!-- <p>Perjalanan profesional saya sebagai analis data</p> -->
+            </div>
+            
+            <div class="work-grid">
+                <!-- Work Experience 1 -->
+                <div class="work-item">
+                    <div class="work-img">
+                    <img src="djpb.jpg" alt="DJPb Work Expereince">
+                        <div class="work-overlay">
+                            <h3>Regional Economic Analysis and Advisory Intern</h3>
+                            <h4>Kemenkeu RI, Direktorat Jenderal Perbendaharaan, Kanwil Sulut</h4>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-date">Mar 2025 - Jun 2025 </span>
+                        <ul>
+                            <li>Compiled and analyzed data for the Q1 2025 Kajian Fiskal Regional of DJPb, Kanwil Sulawesi Utara.</li>
+                            <li>Developed a dashboard to visualize economic and fiscal data.</li>
+                            <li>Forecasted GDP growth and Non-Tax State Revenue (PNBP) for North Sulawesi. </li>
+                            <li>Processed monthly performance data on KUR and UMi distribution.</li>
+                            <li>Contributed to the Regional Fiscal in Brief report for ALCo North Sulawesi.</li>
+                            <li>Strengthened skills in fiscal analysis, asset-liability management, and strategic budgeting.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
+                               <!-- Work Experience 4 -->
+                <div class="work-item">
+                    <div class="work-img">
+                    <img src="de.jpg" alt="Unity Work Expereince">
+                        <div class="work-overlay">
+                            <h3>Data Engineer</h3>
+                            <h4>Grand Project UNITY UNSRAT 2024 </h4>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-date">Aug 2024 - Jan 2025</span>
+                        <ul>
+                            <li>Conducted website crawling and scraping, including manual data entry, to support AI model development. </li>
+                            <li>Developed and implemented an automated scraping scheduler to streamline data collection processes. </li>
+                         <li>Performed data cleaning, augmentation, visualization, and vectorization, and delivered processed data to machine learning pipelines for 
+further analysis and training.</li>
+
+                        </ul>
+                    </div>
+                </div> 
+                <!-- Work Experience 2 -->
+                <div class="work-item">
+                    <div class="work-img">
+                    <img src="asdos.jpg" alt="asdos Work Expereince">
+                        <div class="work-overlay">
+                            <h3>Laboratory Assistant</h3>
+                            <h4>Information Technology Laboratory, FMIPA UNSRAT</h4>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-date">Aug 2022 - Dec 2024</span>
+                        <ul>
+                            <li>Assisted lecturers in facilitating learning for a class of 60 students.</li>
+                            <li>Delivered instructional materials and led practical sessions based on the curriculum, with a focus on Microsoft Office, particularly 
+Microsoft Excel. </li>
+                            <li>Performed administrative tasks, including grading assignments, recording grades, and coordinating with fellow teaching assistants. </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Work Experience 3 -->
+                <div class="work-item">
+                    <div class="work-img">
+                    <img src="pkl.jpg" alt="BPS Work Expereince">
+                        <div class="work-overlay">
+                            <h3>Administrative Intern</h3>
+                            <h4>Badan Pusat Statistik Kabupaten Minahasa</h4>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <span class="work-date">Dec 2023 - Jan 2024</span>
+                        <ul>
+                            <li>Reviewed and verified the completeness of monthly financial documentation.</li>
+                            <li>Assisted in completing the FPK Regsosek (Social and Economic Registration Verification Form) for Minahasa Regency.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portofolio</h2>
+                <p>Data Analysis Projects I Have Completed</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="visualization">Visualization</button>
+                <button class="filter-btn" data-filter="analysis">Analysis</button>
+                <button class="filter-btn" data-filter="forecasting">Forecasting</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+                
+            </div>
+            <div class="portfolio-grid">
+                         <div class="portfolio-item" data-category="database">
+                    <div class="portfolio-img">
+                        <img src="web.png" alt="web">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Web-Based Library Information System Using ReactJS: Case Study at the FMIPA, Universitas Sam Ratulangi</h3>
+                        <p>As part of my final thesis, I developed a web-based library information system for FMIPA UNSRAT using ReactJS, NestJS, and PostgreSQL to replace manual processes. Implemented using the Rapid Application Development (RAD) method, the system enhances book accessibility, streamlines administrative tasks, and improves service quality. User surveys indicate high satisfaction and strong support for academic needs.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">PostgreSQL</span> 
+                            <span class="tag">Java Script</span>
+                             <span class="tag">React</span>
+                             <span class="tag">NestJS</span>
+                             <span class="tag">Prisma ORM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="visualization">
+                    <div class="portfolio-img">
+                    <img src="fiskal.png" alt="Portofolio Fiskal">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Economic and Fiscal Dashboard of North Sulawesi</h3>
+                        <p>Designed and maintained an interactive dashboard to monitor economic growth, inflation, and fiscal performance in North Sulawesi; analyzed regional expenditure and GRDP to identify key sectors; visualized data using Excel, Google Sheets, and Looker Studio; and developed Python scripts to transform raw OMSPAN data for streamlined reporting.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Looker Studio</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Google Sheet</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="visualization">
+                    <div class="portfolio-img">
+                        <img src="perpus.png" alt="Portofolio Renstra">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Strategic Performance Achievement Dashboard of Universitas Sam Ratulangi</h3>
+                        <p>Developed interactive dashboards for Universitas Sam Ratulangi’s strategic performance and library performance to support BLU Maturity Rating, covering key aspects such as finance, services, innovation, governance, and environment.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Looker Studio</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Google Sheets</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="forecasting">
+                    <div class="portfolio-img">
+                        <img src="forecastgdp.jpg" alt="Financial Dashboard">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Forecasting GDP Growth in North Sulawesi Province for Q2–Q4 2025</h3>
+                        <p>Forecasted North Sulawesi’s GDP growth for Q2–Q4 2025 using the ARIMA method, and provided recommendations to the Directorate General of Treasury – North Sulawesi to strengthen regional economic projections as part of the fiscal policy early warning system, enhancing analysis and supporting the development of more responsive, region-specific fiscal policies.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">R Studio</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="analysis">
+                    <div class="portfolio-img">
+                        <img src="kfr.png" alt="KFR">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Regional Fiscal Study Q1 2025</h3>
+                        <p>Contributed to the Q1 2025 Regional Fiscal Study (Kajian Fiskal Regional) by assisting in the preparation of Chapter 1.1 (Economic Indicator Analysis) and Chapter 3 (Thematic Analysis), a collaborative publication that evaluates budget implementation and regional economic performance.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Excel</span>
+                            <span class="tag">Data Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="portfolio-item" data-category="forecasting">
+                    <div class="portfolio-img">
+                        <img src="arima.png" alt="arima">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Stock Price Forecasting of PT. Jasa Marga Tbk</h3>
+                        <p>Using the ARIMA method, this project forecasted the monthly closing stock prices of PT. Jasa Marga Tbk for the period of September to December 2022. The model successfully captured historical trends and produced projected prices of 3666 (September), 3637 (October), 3608 (November), and 3579 (December). A time series plot comparing actual data from June 2018 to August 2022 with the model’s predictions demonstrates its effectiveness in tracking stock price movements.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">R Studio</span>
+                            <span class="tag">Minitab</span>
+                            </div>
+                    </div>
+                </div>
+                 <div class="portfolio-item" data-category="analysis">
+                    <div class="portfolio-img">
+                        <img src="korelasi.jpg" alt="analisis korelasi">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Exploratory Data Analysis Project on Spotify Top 1000 Tracks: The Effect of Duration on Song Popularity</h3>
+                        <p>This project explores whether song duration affects popularity using the Spotify Top 1000 Tracks dataset. With Python, Pandas, Seaborn, and SciPy, I performed data cleaning, visualization, and statistical testing. The result showed no significant correlation, strengthening my skills in EDA and hypothesis testing.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Python</span> 
+                        </div>
+                    </div>
+                </div> 
+                 <div class="portfolio-item" data-category="analysis">
+                    <div class="portfolio-img">
+                        <img src="saham.png" alt="Pasmod Analysis">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Stock Analysis Project of Freeport-McMoRan Inc., McDonald's Corporation and Starbucks Corporation</h3>
+                        <p>Analyzed 91 days of stock data from three issuers to calculate return, continuous return, standard deviation, beta, and optimize portfolio using Excel Solver and matrix calculations. The results recommend buying FCX, short-selling SBUX, and avoiding MCD, with a portfolio weight of $1 and an expected return of 75%.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Excel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="database">
+                    <div class="portfolio-img">
+                        <img src="sql.png" alt="sql">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Database for a Pharmacy</h3>
+                        <p>Creating a database for a pharmacy to facilitate the transaction system in the pharmacy. The tables included are: pharmacist, warehouse, employee, consumer, medication, prescription, supplier, and transaction.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">My SQL</span>
+                          </div>
+                    </div>
+                </div>
+     
+    </section>
+
+ <!-- Skills Section -->
+<section class="skills-section" id="skills">
+    <div class="container">
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+            <p>Tools and Technologies I Use for Data Analysis</p>
+        </div>
+        <div class="skills-container">
+            <!-- Microsoft Office -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-microsoft"></i>
+                </div>
+                <h3>Microsoft Office</h3>
+                <p>Advanced proficiency in Excel (PivotTables, Power Query), Word, and PowerPoint for data analysis, reporting, and presentation.</p>
+            </div>
+            
+            <!-- R Programming -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-r-project"></i>
+                </div>
+                <h3>R Programming</h3>
+                <p>Statistical computing and graphics for data analysis, forecasting, visualization, and modeling.</p>
+            </div>
+            
+            <!-- Python -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python</h3>
+                <p>Data processing with Pandas, scientific computing with NumPy, and machine learning with Scikit-learn.</p>
+            </div>
+            
+            <!-- SQL -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>SQL</h3>
+                <p>Database management, complex query writing, and data extraction for analysis.</p>
+            </div>
+            
+            <!-- Power BI -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Power BI</h3>
+                <p>Creating interactive business intelligence dashboards and reports.</p>
+            </div>
+            
+            <!-- Looker Studio -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h3>Looker Studio</h3>
+                <p>Data visualization and reporting with Google's business intelligence platform.</p>
+            </div>
+            
+            <!-- Tableau -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-area"></i>
+                </div>
+                <h3>Tableau</h3>
+                <p>Creating interactive data visualizations and dashboards for business intelligence and analytics.</p>
+            </div>
+            
+            <!-- MATLAB -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>MATLAB</h3>
+                <p>Using MATLAB for numerical computation, mathematical modeling, and algorithm development.</p>
+            </div>
+            
+            <!-- Minitab -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Minitab</h3>
+                <p>Statistical analysis and quality improvement tools for data-driven decision making.</p>
+            </div>
+            
+            <!-- EViews -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-wave-square"></i>
+                </div>
+                <h3>EViews</h3>
+                <p>Econometric analysis, forecasting, and statistical modeling for time series data.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Me</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <!-- Email dengan link langsung ke compose email di Gmail -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=freyatombokan20@gmail.com" target="_blank">
+                            freyatombokan20@gmail.com
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- WhatsApp dengan link langsung ke chat -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i> <!-- Ganti icon dengan WhatsApp -->
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone/WhatsApp</h3>
+                        <a href="https://wa.me/6282271110321" target="_blank">
+                            +62 822 7111 0321
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/freyatombokan" target="_blank">
+                            Freya Emily Theresia Tombokan
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Lokasi -->
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>Manado, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Form kontak akan ditambahkan di sini -->
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Portofolio</h3>
+                    <p>Freya Emily Theresia Tombokan</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/freyatombokan"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/freyatombokan"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/freyatombokan?igsh=ZDQ5dWY5cjduNDJp"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <!-- <h3>Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#work-experience">Work Experiences</a></li>
+                        <li><a href="#portfolio">Portofolio</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="#">Analisis Data</a></li>
+                        <li><a href="#">Visualisasi Data</a></li>
+                        <li><a href="#">Dashboard Bisnis</a></li>
+                        <li><a href="#">Model Prediktif</a></li>
+                        <li><a href="#">Pelatihan Data</a></li>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Portofolio Freya Emily T. Tombokan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Portfolio Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            console.log('Form submitted:', { name, email, subject, message });
+            
+            // Show success message
+            alert('Pesan Anda telah terkirim! Saya akan menghubungi Anda secepatnya.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
